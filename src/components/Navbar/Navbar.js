@@ -46,6 +46,12 @@ const Navbar = () => {
       position: "absolute",
       top: 100,
       left: 100,
+      transition: "0.2s all ease",
+      [theme.breakpoints.down("sm")]: {
+        // for xs screens, because sm is 600px to 900px. This breakpoint doesn't take effect until the screen hits 599px.
+        top: 50,
+        left: 50,
+      },
 
       "&:hover": {
         backgroundColor: theme.palette.highlight.blueHighlight,
@@ -59,6 +65,10 @@ const Navbar = () => {
       height: "100%",
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.type,
+      transition: "0.2s all ease",
+      [theme.breakpoints.down("sm")]: {
+        width: 200,
+      },
     },
 
     headerText: {
@@ -70,7 +80,7 @@ const Navbar = () => {
     },
     listItemSelected: {
       borderRight: `3px solid ${theme.palette.highlight.yellow}`,
-      color: theme.palette.primary.type,
+      color: theme.palette.highlight.orange,
     },
 
     listIcon: {
