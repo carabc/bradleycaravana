@@ -1,0 +1,62 @@
+For MUI components, create an object of styling properties like this:
+
+const styles = {
+    icon: {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.type,
+      "&:hover": {
+        backgroundColor: theme.palette.highlight.blueHighlight,
+      },
+    },
+  };
+
+  Then apply it to the MUI component like this:
+
+  <Fab aria-label="menu" sx={styles.icon}>
+        <MenuIcon />
+  </Fab>
+
+  For non MUI components, you have to use emotion styling strings. You have to: 
+  place this comment at the top of your page so that the compiler compiles the code as jsx instead of react. Then import jsx and css.
+  /** @jsx jsx */
+  import { jsx, css } from "@emotion/react"
+
+  const styles = {
+    header: css`
+      background-color: ${theme.palette.primary.main};
+      margin: 1em;
+    `
+  }
+
+Apply it to the non mui element like this:
+
+<header css={styles.header}>
+</header>
+
+Can also combine the string styles with MUI sx styles in the same object like so:
+const styles = {
+    icon: {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.type,
+      "&:hover": {
+        backgroundColor: theme.palette.highlight.blueHighlight,
+      },
+    },
+
+    test: css`
+      color: ${theme.palette.highlight.lightPink};
+    `,
+  };
+
+can also do inline css with the css prop:
+
+<div
+    css={{
+      backgroundColor: 'hotpink',
+      '&:hover': {
+        color: 'lightgreen'
+      }
+    }}
+  >
+    This has a hotpink background.
+  </div>
