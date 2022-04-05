@@ -2,8 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
-/* 
+
 .App {
-  background-color: #122738;
-} */
+  height: 100%;
+}
+
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
