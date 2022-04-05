@@ -22,6 +22,7 @@ import Home from "./pages/Home/Home";
 import Blog from "./pages/Blog/Blog";
 import Contact from "./pages/Contact/Contact";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import TimelineHome from "./pages/Home/TimelineHome";
 
 // Material UI Styles
 import { jsx, css } from "@emotion/react";
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/home" element={<TimelineHome />} />
         </Routes>
         <Footer />
       </Router>
