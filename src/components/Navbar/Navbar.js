@@ -43,7 +43,7 @@ const Navbar = () => {
     icon: {
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.type,
-      position: "absolute",
+      position: "fixed",
       top: 100,
       left: 100,
       transition: "0.2s all ease",

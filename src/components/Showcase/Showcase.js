@@ -8,7 +8,7 @@ import family from "../../images/family.jpg";
 import me from "../../images/me.JPG";
 
 // React router dom
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // MUI Components
 import { Box, Button, Container, Typography } from "@mui/material";
@@ -22,6 +22,8 @@ import { useTheme } from "@mui/styles";
 
 const Showcase = ({ title, subtitle }) => {
   const theme = useTheme();
+  const location = useLocation();
+  const pathname = location.pathname;
   const StyledBox = styled(Box)({
     display: "flex",
     height: "80%",
@@ -53,35 +55,23 @@ const Showcase = ({ title, subtitle }) => {
     },
   });
 
-  if (title === undefined) {
-    return (
-      <StyledBox>
-        <Container>
-          <StyledTypography variant="h2">
-            Hi, I'm <StyledSpan>Bradley</StyledSpan>.
-          </StyledTypography>
-          <StyledSubtitle variant="subtitle2">
-            Becoming a better programmer one line at a time.
-          </StyledSubtitle>
-          <StyledButton variant="outlined" component={Link} to="/portfolio">
-            See my work
-          </StyledButton>
-        </Container>
-      </StyledBox>
-    );
-  } else {
-    return (
-      <StyledBox>
-        <Container>
-          <StyledTypography variant="h2">{title}</StyledTypography>
-          <StyledSubtitle variant="subtitle2">{subtitle}</StyledSubtitle>
-          <StyledButton variant="outlined" component={Link} to="/portfolio">
-            See my work
-          </StyledButton>
-        </Container>
-      </StyledBox>
-    );
-  }
+  return (
+    <StyledBox>
+      <Container>
+        <StyledTypography variant="h2">
+          Hi, I'm <StyledSpan>Bradley</StyledSpan>.
+        </StyledTypography>
+        <StyledSubtitle variant="subtitle2">
+          {pathname === "/blog"
+            ? "Welcome to my blog."
+            : "Becoming a better programmer one line at a time."}
+        </StyledSubtitle>
+        <StyledButton variant="outlined" component={Link} to="/portfolio">
+          See my work
+        </StyledButton>
+      </Container>
+    </StyledBox>
+  );
 };
 
 export default Showcase;
