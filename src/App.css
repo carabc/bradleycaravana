@@ -3,7 +3,27 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* 
+
 .App {
-  background-color: #122738;
-} */
+  height: 100%;
+}
+
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffc600;
+  border-radius: 50px;
+}

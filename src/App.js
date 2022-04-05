@@ -4,11 +4,18 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 // React router dom
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 // Components
-
 import Navbar from "./components/Navbar/Navbar";
+import Showcase from "./components/Showcase/Showcase";
+import Footer from "./components/Footer/Footer";
 
 // Pages
 import Home from "./pages/Home/Home";
@@ -27,16 +34,17 @@ const App = () => {
   const theme = useTheme();
 
   return (
-    <div>
+    <div className="App">
       <Router>
-        {/* Navbar - Should always be rendered, only rendered once on page load, lives in App.js */}
         <Navbar />
+        <Showcase />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
