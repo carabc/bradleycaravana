@@ -31,6 +31,11 @@ const theme = createTheme({
       pink: "#ff0088",
       lightPink: "#ff628c",
     },
+    transBg: {
+      orange: "rgba(255, 157, 0, 0.1)",
+      blue: "rgba(31, 70, 98, 0.1)",
+      yellow: "rgba(255, 198, 0, 0.1)",
+    },
   },
 });
 

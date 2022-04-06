@@ -26,14 +26,14 @@ const Showcase = ({ title, subtitle }) => {
   const pathname = location.pathname;
   const StyledBox = styled(Box)({
     display: "flex",
-    height: "80%",
+    height: "100%",
     backgroundSize: "cover",
     backgroundImage: `url(${docks})`,
     alignItems: "center",
-    borderBottom: `2px solid ${theme.palette.highlight.yellow}`,
+    // borderBottom: `2px solid ${theme.palette.highlight.yellow}`,
   });
   const StyledSpan = styled("span")({
-    color: theme.palette.highlight.orange,
+    color: theme.palette.highlight.blueHighlight,
   });
   const StyledTypography = styled(Typography)({
     color: theme.palette.primary.type,
@@ -42,16 +42,16 @@ const Showcase = ({ title, subtitle }) => {
   const StyledSubtitle = styled(Typography)({
     fontSize: "1.25em",
     // color: theme.palette.primary.type,
-    color: theme.palette.highlight.orange,
+    color: theme.palette.highlight.blueHighlight,
   });
   const StyledButton = styled(Button)({
     marginTop: ".5em",
     borderColor: theme.palette.primary.type,
     color: theme.palette.primary.type,
     "&:hover": {
-      borderColor: theme.palette.highlight.orange,
-      color: theme.palette.highlight.orange,
-      backgroundColor: "rgba(255, 157, 0, 0.05)",
+      borderColor: theme.palette.primary.blueHighlightSecondary,
+      color: theme.palette.highlight.blueHighlight,
+      backgroundColor: theme.palette.transBg.blue,
     },
   });
 
@@ -64,7 +64,7 @@ const Showcase = ({ title, subtitle }) => {
         <StyledSubtitle variant="subtitle2">
           {pathname === "/blog"
             ? "Welcome to my blog."
-            : "Becoming a better programmer one line at a time."}
+            : "I'm a full-stack developer from Long Island, New York."}
         </StyledSubtitle>
         <StyledButton variant="outlined" component={Link} to="/portfolio">
           See my work
